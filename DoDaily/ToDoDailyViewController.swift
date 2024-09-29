@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ToDoDailyViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
