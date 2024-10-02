@@ -11,7 +11,7 @@ class ToDoDailyViewController: UITableViewController {
 
     //MARK - Variables
     
-    let itemArray = ["milk","find ring", "grocery","garbage bag"]
+    var arryItem = ["milk","find ring", "grocery","garbage bag"]
     //MARK - Methods
     
     override func viewDidLoad() {
@@ -21,11 +21,11 @@ class ToDoDailyViewController: UITableViewController {
 
     //TableView Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemArray.count
+        return arryItem.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItem", for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row]
+        cell.textLabel?.text = arryItem[indexPath.row]
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -37,6 +37,29 @@ class ToDoDailyViewController: UITableViewController {
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    //MARK:- Action AddButtion
+    
+    
+    @IBAction func AddItem(_ sender: UIBarButtonItem) {
+        var textField = UITextField()
+        let alert = UIAlertController(title: "Add New ToDo Item", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Item", style: .default) { action in
+            //if textField.text != nil {
+                self.arryItem.append(textField.text!)
+            //}
+            self.tableView.reloadData()
+        }
+        
+        alert.addTextField { uitextfield in
+            uitextfield.placeholder = "Add New Item"
+            textField = uitextfield
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 
