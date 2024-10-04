@@ -12,11 +12,15 @@ class ToDoDailyViewController: UITableViewController {
     //MARK - Variables
     
     var arryItem = ["milk","find ring", "grocery","garbage bag"]
+    let userDefaults = UserDefaults.standard
     //MARK - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if let data = userDefaults.array(forKey: "ToDoDaily") as? [String] {
+            arryItem = data
+        }
     }
 
     //TableView Methods
@@ -47,9 +51,10 @@ class ToDoDailyViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New ToDo Item", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Item", style: .default) { action in
-            //if textField.text != nil {
-                self.arryItem.append(textField.text!)
-            //}
+            if let data = textField.text {
+                self.arryItem.append(data)
+            }
+            self.userDefaults.setValue(self.arryItem, forKey: "ToDoDaily")
             self.tableView.reloadData()
         }
         
