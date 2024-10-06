@@ -12,19 +12,25 @@ class ToDoDailyViewController: UITableViewController {
     //MARK - Variables
     
     var arryItem = [Item]()
-    let userDefaults = UserDefaults.standard
+    // User Defaults just use to save the standerd data type not custom object
+   // let userDefaults = UserDefaults.standard
+    
+    // App file path to store data
+    let datafilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     //MARK - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        if let data = userDefaults.object(forKey: "ToDoDaily") as? [String] {
+        
+        //call to collect data from userdefaults
+//        if let data = userDefaults.object(forKey: "ToDoDaily") as? [Item] {
 //            arryItem = data
 //        }
-        let newItem = Item()
-        newItem.title = "Mixer"
-        arryItem.append(newItem)
-        
+//        let newItem = Item()
+//        newItem.title = "Mixer"
+//        arryItem.append(newItem)
+        loadData()
     }
 
     //TableView Methods
@@ -33,28 +39,18 @@ class ToDoDailyViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItem", for: indexPath)
-        cell.textLabel?.text = arryItem[indexPath.row].title
-        if arryItem[indexPath.row].done == true{
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
+        let item = arryItem[indexPath.row]
+        cell.textLabel?.text = item.title
+        // Check checkmark is available then visible it
+        cell.accessoryType = item.done ? .checkmark : .none
+
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
-//        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-//            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-//        } else {
-//            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-//        }
-        if arryItem[indexPath.row].done == false {
-            arryItem[indexPath.row].done = true
-        }else {
-            arryItem[indexPath.row].done = false
-        }
-        //if arryItem[in]
-        tableView.reloadData()
+        arryItem[indexPath.row].done = !arryItem[indexPath.row].done
+       
+        SaveItemData()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -69,9 +65,10 @@ class ToDoDailyViewController: UITableViewController {
             let newitem = Item()
             newitem.title = textField.text!
             self.arryItem.append(newitem)
-           
-            self.userDefaults.setValue(self.arryItem, forKey: "ToDoDaily")
-            self.tableView.reloadData()
+           // set appended array in userdefaults for small list
+            //self.userDefaults.setValue(self.arryItem, forKey: "ToDoDaily")
+            
+            self.SaveItemData()
         }
         
         alert.addTextField { uitextfield in
@@ -81,6 +78,27 @@ class ToDoDailyViewController: UITableViewController {
         
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+    }
+    func SaveItemData(){
+        let endoer = PropertyListEncoder()
+        do{
+            let data = try endoer.encode(arryItem)
+            try data.write(to: datafilePath!)
+        }catch {
+            print("Error: \(error)")
+        }
+        self.tableView.reloadData()
+    }
+    func loadData(){
+       if let data = try? Data(contentsOf: datafilePath!) {
+           let decoder = PropertyListDecoder()
+           do {
+               arryItem = try decoder.decode([Item].self, from: data)
+               
+           }catch{
+               print("Decodable Error : \(error)")
+           }
+        }
     }
 }
 
