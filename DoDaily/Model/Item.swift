@@ -8,7 +8,7 @@
 import Foundation
 
 
-class ModelList {
-    var item : String = ""
+class Item {
+    var title : String = ""
     var done : Bool = false
 }

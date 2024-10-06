@@ -16,6 +16,7 @@
 		8C8852DB2CA648DD00732BA9 /* DoDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8852DA2CA648DD00732BA9 /* DoDailyTests.swift */; };
 		8C8852E52CA648DD00732BA9 /* DoDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8852E42CA648DD00732BA9 /* DoDailyUITests.swift */; };
 		8C8852E72CA648DD00732BA9 /* DoDailyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8852E62CA648DD00732BA9 /* DoDailyUITestsLaunchTests.swift */; };
+		8C8852F42CB01FD200732BA9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8852F32CB01FD200732BA9 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8C8852E02CA648DD00732BA9 /* DoDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8852E42CA648DD00732BA9 /* DoDailyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoDailyUITests.swift; sourceTree = "<group>"; };
 		8C8852E62CA648DD00732BA9 /* DoDailyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoDailyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C8852F32CB01FD200732BA9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +101,13 @@
 		8C8852C22CA648DB00732BA9 /* DoDaily */ = {
 			isa = PBXGroup;
 			children = (
+				8C8852F82CB0220800732BA9 /* suporting file */,
+				8C8852F72CB021F700732BA9 /* Controller */,
+				8C8852F62CB021F100732BA9 /* View */,
+				8C8852F52CB021E800732BA9 /* Model */,
 				8C8852C32CA648DB00732BA9 /* AppDelegate.swift */,
 				8C8852C52CA648DB00732BA9 /* SceneDelegate.swift */,
-				8C8852C72CA648DB00732BA9 /* ToDoDailyViewController.swift */,
-				8C8852C92CA648DB00732BA9 /* Main.storyboard */,
 				8C8852CC2CA648DD00732BA9 /* Assets.xcassets */,
-				8C8852CE2CA648DD00732BA9 /* LaunchScreen.storyboard */,
 				8C8852D12CA648DD00732BA9 /* Info.plist */,
 			);
 			path = DoDaily;
@@ -125,6 +128,38 @@
 				8C8852E62CA648DD00732BA9 /* DoDailyUITestsLaunchTests.swift */,
 			);
 			path = DoDailyUITests;
+			sourceTree = "<group>";
+		};
+		8C8852F52CB021E800732BA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C8852F32CB01FD200732BA9 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C8852F62CB021F100732BA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C8852C92CA648DB00732BA9 /* Main.storyboard */,
+				8C8852CE2CA648DD00732BA9 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C8852F72CB021F700732BA9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8C8852C72CA648DB00732BA9 /* ToDoDailyViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8C8852F82CB0220800732BA9 /* suporting file */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "suporting file";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +296,7 @@
 				8C8852C82CA648DB00732BA9 /* ToDoDailyViewController.swift in Sources */,
 				8C8852C42CA648DB00732BA9 /* AppDelegate.swift in Sources */,
 				8C8852C62CA648DB00732BA9 /* SceneDelegate.swift in Sources */,
+				8C8852F42CB01FD200732BA9 /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
