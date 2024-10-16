@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ToDoDailyViewController: UITableViewController {
 
@@ -14,9 +15,11 @@ class ToDoDailyViewController: UITableViewController {
     var arryItem = [Item]()
     // User Defaults just use to save the standerd data type not custom object
    // let userDefaults = UserDefaults.standard
+    // for Coredata
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    // App file path to store data
-    let datafilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    // App file path to store small data
+    //let datafilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     //MARK - Methods
     
     override func viewDidLoad() {
@@ -27,10 +30,12 @@ class ToDoDailyViewController: UITableViewController {
 //        if let data = userDefaults.object(forKey: "ToDoDaily") as? [Item] {
 //            arryItem = data
 //        }
+        // for small data
 //        let newItem = Item()
 //        newItem.title = "Mixer"
 //        arryItem.append(newItem)
-        loadData()
+       // loadData()
+        loadCoreData()
     }
 
     //TableView Methods
@@ -62,12 +67,16 @@ class ToDoDailyViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New ToDo Item", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Item", style: .default) { action in
-            let newitem = Item()
+            
+            // coredata
+            let newitem = Item(context: self.context)
             newitem.title = textField.text!
+            newitem.done = false
             self.arryItem.append(newitem)
+            
+            // small data
            // set appended array in userdefaults for small list
             //self.userDefaults.setValue(self.arryItem, forKey: "ToDoDaily")
-            
             self.SaveItemData()
         }
         
@@ -80,24 +89,36 @@ class ToDoDailyViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     func SaveItemData(){
-        let endoer = PropertyListEncoder()
+      //  small data
+       // let endoer = PropertyListEncoder()
         do{
-            let data = try endoer.encode(arryItem)
-            try data.write(to: datafilePath!)
+            //small data
+//            let data = try endoer.encode(arryItem)
+//            try data.write(to: datafilePath!)
+            try context.save()
         }catch {
             print("Error: \(error)")
         }
         self.tableView.reloadData()
     }
-    func loadData(){
-       if let data = try? Data(contentsOf: datafilePath!) {
-           let decoder = PropertyListDecoder()
-           do {
-               arryItem = try decoder.decode([Item].self, from: data)
-               
-           }catch{
-               print("Decodable Error : \(error)")
-           }
+// for small data
+//    func loadData(){
+//       if let data = try? Data(contentsOf: datafilePath!) {
+//           let decoder = PropertyListDecoder()
+//           do {
+//               arryItem = try decoder.decode([Item].self, from: data)
+//               
+//           }catch{
+//               print("Decodable Error : \(error)")
+//           }
+//        }
+   // }
+    func loadCoreData(){
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        do{
+            arryItem = try context.fetch(request)
+        } catch {
+            print("Error for CoreData load :  \(error)")
         }
     }
 }
