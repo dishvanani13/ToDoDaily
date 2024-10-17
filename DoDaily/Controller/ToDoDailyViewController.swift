@@ -53,7 +53,11 @@ class ToDoDailyViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
-        arryItem[indexPath.row].done = !arryItem[indexPath.row].done
+        context.delete(arryItem[indexPath.row])
+        arryItem.remove(at: indexPath.row)
+        
+        
+       // arryItem[indexPath.row].done = !arryItem[indexPath.row].done
        
         SaveItemData()
         tableView.deselectRow(at: indexPath, animated: true)
