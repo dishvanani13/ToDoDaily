@@ -12,6 +12,7 @@ class ToDoDailyViewController: UITableViewController {
 
     //MARK - Variables
     
+    @IBOutlet weak var searchBar: UISearchBar!
     var arryItem = [Item]()
     // User Defaults just use to save the standerd data type not custom object
    // let userDefaults = UserDefaults.standard
@@ -36,6 +37,10 @@ class ToDoDailyViewController: UITableViewController {
 //        arryItem.append(newItem)
        // loadData()
         loadCoreData()
+        
+        //SearchBar Delegate
+       searchBar.delegate = self
+        
     }
 
     //TableView Methods
@@ -124,6 +129,26 @@ class ToDoDailyViewController: UITableViewController {
         } catch {
             print("Error for CoreData load :  \(error)")
         }
+    }
+}
+extension ToDoDailyViewController : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        let predicate  = NSPredicate(format: "title CONTAINS[cd] %@",searchBar.text!)
+        request.predicate = predicate
+        
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
+        
+        do{
+            arryItem = try context.fetch(request)
+        }catch {
+            print("Error: \(error)")
+        }
+        tableView.reloadData()
+        DispatchQueue.main.async {
+                        searchBar.resignFirstResponder()
+                    }
     }
 }
 
