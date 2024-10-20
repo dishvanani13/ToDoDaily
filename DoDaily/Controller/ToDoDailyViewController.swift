@@ -36,6 +36,8 @@ class ToDoDailyViewController: UITableViewController {
 //        newItem.title = "Mixer"
 //        arryItem.append(newItem)
        // loadData()
+        
+        
         loadCoreData()
         
         //SearchBar Delegate
@@ -122,14 +124,15 @@ class ToDoDailyViewController: UITableViewController {
 //           }
 //        }
    // }
-    func loadCoreData(){
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
+    func loadCoreData(with request : NSFetchRequest<Item> = Item.fetchRequest() ){
         do{
             arryItem = try context.fetch(request)
         } catch {
             print("Error for CoreData load :  \(error)")
         }
+        tableView.reloadData()
     }
+    
 }
 extension ToDoDailyViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -145,10 +148,14 @@ extension ToDoDailyViewController : UISearchBarDelegate {
         }catch {
             print("Error: \(error)")
         }
-        tableView.reloadData()
-        DispatchQueue.main.async {
-                        searchBar.resignFirstResponder()
-                    }
+        loadCoreData(with: request)
+        
     }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadCoreData()
+        }
+    }
+   
 }
 
