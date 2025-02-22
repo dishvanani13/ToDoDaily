@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+//import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        let data = Data()
+//        data.name = "Disha"
+//        data.age = 24
+//        
+//        do{
+//            let realm = try Realm()
+//        }catch {
+//            print("Error :  \(error)")
+//        }
+        
         return true
     }
 
@@ -41,6 +53,64 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
+    
+        
+        
+//        let container = NSPersistentContainer(name: "DataModel")
+//        guard let storeDescription = container.persistentStoreDescriptions.first else {
+//            fatalError("No persistent store description found.")
+//        }
+//        storeDescription.setOption(true as NSNumber, forKey: NSMigratePersistentStoresAutomaticallyOption)
+//        storeDescription.setOption(true as NSNumber, forKey: NSInferMappingModelAutomaticallyOption)
+//
+//        container.loadPersistentStores { storeDescription, error in
+//            if let error = error {
+//                fatalError("Unresolved error \(error)")
+//            }
+//        }
+
+        
+        
+        
+        
+        
+        //     TO DO EMPTY CONTAITER..........
+
+//        
+//            let container = NSPersistentContainer(name: "DataModel") // Replace "DataModel" with your model name
+//
+//            // Enable lightweight migration
+//            guard let storeDescription = container.persistentStoreDescriptions.first else {
+//                fatalError("No persistent store description found.")
+//            }
+//            storeDescription.setOption(true as NSNumber, forKey: NSMigratePersistentStoresAutomaticallyOption)
+//            storeDescription.setOption(true as NSNumber, forKey: NSInferMappingModelAutomaticallyOption)
+//
+//            container.loadPersistentStores { (storeDescription, error) in
+//                if let error = error as NSError? {
+//                    // If migration fails and you want to reset the store:
+//                    if let storeURL = storeDescription.url {
+//                        do {
+//                            // Remove the persistent store file
+//                            try container.persistentStoreCoordinator.destroyPersistentStore(at: storeURL, ofType: NSSQLiteStoreType, options: nil)
+//                            try FileManager.default.removeItem(at: storeURL)
+//                            print("Persistent store removed. Loading new store.")
+//
+//                            // Attempt to load the persistent store again
+//                            container.loadPersistentStores { (storeDescription, error) in
+//                                if let error = error {
+//                                    fatalError("Failed to load new persistent store: \(error)")
+//                                }
+//                            }
+//                        } catch {
+//                            fatalError("Failed to remove persistent store: \(error)")
+//                        }
+//                    }
+//                }
+//            }
+           
+        
+        
         let container = NSPersistentContainer(name: "DataModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

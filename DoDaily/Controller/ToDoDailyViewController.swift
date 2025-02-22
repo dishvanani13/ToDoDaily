@@ -14,6 +14,11 @@ class ToDoDailyViewController: UITableViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     var arryItem = [Item]()
+    var selectedCategory : Category? {
+        didSet{
+            loadCoreData()
+        }
+    }
     // User Defaults just use to save the standerd data type not custom object
    // let userDefaults = UserDefaults.standard
     // for Coredata
@@ -38,7 +43,7 @@ class ToDoDailyViewController: UITableViewController {
        // loadData()
         
         
-        loadCoreData()
+       
         
         //SearchBar Delegate
        searchBar.delegate = self
@@ -83,6 +88,7 @@ class ToDoDailyViewController: UITableViewController {
             let newitem = Item(context: self.context)
             newitem.title = textField.text!
             newitem.done = false
+            newitem.parentCategory = self.selectedCategory
             self.arryItem.append(newitem)
             
             // small data
@@ -124,7 +130,15 @@ class ToDoDailyViewController: UITableViewController {
 //           }
 //        }
    // }
-    func loadCoreData(with request : NSFetchRequest<Item> = Item.fetchRequest() ){
+    func loadCoreData(with request : NSFetchRequest<Item> = Item.fetchRequest() , predicate : NSPredicate? = nil){
+        
+        let cateorypredicates = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+        if let additionalPredicates = predicate{
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [cateorypredicates, additionalPredicates])
+        } else {
+            request.predicate = cateorypredicates
+        }
+        
         do{
             arryItem = try context.fetch(request)
         } catch {
@@ -148,7 +162,7 @@ extension ToDoDailyViewController : UISearchBarDelegate {
         }catch {
             print("Error: \(error)")
         }
-        loadCoreData(with: request)
+        loadCoreData(with: request, predicate: predicate)
         
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

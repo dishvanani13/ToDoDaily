@@ -13,28 +13,10 @@
 		8C8852CB2CA648DB00732BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8852C92CA648DB00732BA9 /* Main.storyboard */; };
 		8C8852CD2CA648DD00732BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C8852CC2CA648DD00732BA9 /* Assets.xcassets */; };
 		8C8852D02CA648DD00732BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8852CE2CA648DD00732BA9 /* LaunchScreen.storyboard */; };
-		8C8852DB2CA648DD00732BA9 /* DoDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8852DA2CA648DD00732BA9 /* DoDailyTests.swift */; };
-		8C8852E52CA648DD00732BA9 /* DoDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8852E42CA648DD00732BA9 /* DoDailyUITests.swift */; };
-		8C8852E72CA648DD00732BA9 /* DoDailyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8852E62CA648DD00732BA9 /* DoDailyUITestsLaunchTests.swift */; };
 		8C8852FB2CB6197F00732BA9 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C8852F92CB6197F00732BA9 /* DataModel.xcdatamodeld */; };
+		8C88533F2CC59F3700732BA9 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88533E2CC59F3700732BA9 /* CategoryTableViewController.swift */; };
+		8CBDB8CB2D25E9D10048F172 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDB8CA2D25E9D10048F172 /* Data.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		8C8852D72CA648DD00732BA9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C8852B82CA648DB00732BA9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C8852BF2CA648DB00732BA9;
-			remoteInfo = DoDaily;
-		};
-		8C8852E12CA648DD00732BA9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C8852B82CA648DB00732BA9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C8852BF2CA648DB00732BA9;
-			remoteInfo = DoDaily;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8C8852C02CA648DB00732BA9 /* DoDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,30 +27,13 @@
 		8C8852CC2CA648DD00732BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C8852CF2CA648DD00732BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C8852D12CA648DD00732BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C8852D62CA648DD00732BA9 /* DoDailyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoDailyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C8852DA2CA648DD00732BA9 /* DoDailyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoDailyTests.swift; sourceTree = "<group>"; };
-		8C8852E02CA648DD00732BA9 /* DoDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C8852E42CA648DD00732BA9 /* DoDailyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoDailyUITests.swift; sourceTree = "<group>"; };
-		8C8852E62CA648DD00732BA9 /* DoDailyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoDailyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8C8852FA2CB6197F00732BA9 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		8C88533E2CC59F3700732BA9 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		8CBDB8CA2D25E9D10048F172 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8C8852BD2CA648DB00732BA9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8C8852D32CA648DD00732BA9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8C8852DD2CA648DD00732BA9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,8 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				8C8852C22CA648DB00732BA9 /* DoDaily */,
-				8C8852D92CA648DD00732BA9 /* DoDailyTests */,
-				8C8852E32CA648DD00732BA9 /* DoDailyUITests */,
 				8C8852C12CA648DB00732BA9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,8 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				8C8852C02CA648DB00732BA9 /* DoDaily.app */,
-				8C8852D62CA648DD00732BA9 /* DoDailyTests.xctest */,
-				8C8852E02CA648DD00732BA9 /* DoDailyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,33 +68,16 @@
 				8C8852F52CB021E800732BA9 /* Model */,
 				8C8852C32CA648DB00732BA9 /* AppDelegate.swift */,
 				8C8852C52CA648DB00732BA9 /* SceneDelegate.swift */,
-				8C8852CC2CA648DD00732BA9 /* Assets.xcassets */,
 				8C8852D12CA648DD00732BA9 /* Info.plist */,
 			);
 			path = DoDaily;
-			sourceTree = "<group>";
-		};
-		8C8852D92CA648DD00732BA9 /* DoDailyTests */ = {
-			isa = PBXGroup;
-			children = (
-				8C8852DA2CA648DD00732BA9 /* DoDailyTests.swift */,
-			);
-			path = DoDailyTests;
-			sourceTree = "<group>";
-		};
-		8C8852E32CA648DD00732BA9 /* DoDailyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8C8852E42CA648DD00732BA9 /* DoDailyUITests.swift */,
-				8C8852E62CA648DD00732BA9 /* DoDailyUITestsLaunchTests.swift */,
-			);
-			path = DoDailyUITests;
 			sourceTree = "<group>";
 		};
 		8C8852F52CB021E800732BA9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				8C8852F92CB6197F00732BA9 /* DataModel.xcdatamodeld */,
+				8CBDB8CA2D25E9D10048F172 /* Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				8C8852C92CA648DB00732BA9 /* Main.storyboard */,
-				8C8852CE2CA648DD00732BA9 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				8C8852C72CA648DB00732BA9 /* ToDoDailyViewController.swift */,
+				8C88533E2CC59F3700732BA9 /* CategoryTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -158,6 +102,8 @@
 		8C8852F82CB0220800732BA9 /* suporting file */ = {
 			isa = PBXGroup;
 			children = (
+				8C8852CE2CA648DD00732BA9 /* LaunchScreen.storyboard */,
+				8C8852CC2CA648DD00732BA9 /* Assets.xcassets */,
 			);
 			path = "suporting file";
 			sourceTree = "<group>";
@@ -182,42 +128,6 @@
 			productReference = 8C8852C02CA648DB00732BA9 /* DoDaily.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8C8852D52CA648DD00732BA9 /* DoDailyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8C8852ED2CA648DD00732BA9 /* Build configuration list for PBXNativeTarget "DoDailyTests" */;
-			buildPhases = (
-				8C8852D22CA648DD00732BA9 /* Sources */,
-				8C8852D32CA648DD00732BA9 /* Frameworks */,
-				8C8852D42CA648DD00732BA9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8C8852D82CA648DD00732BA9 /* PBXTargetDependency */,
-			);
-			name = DoDailyTests;
-			productName = DoDailyTests;
-			productReference = 8C8852D62CA648DD00732BA9 /* DoDailyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8C8852DF2CA648DD00732BA9 /* DoDailyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8C8852F02CA648DD00732BA9 /* Build configuration list for PBXNativeTarget "DoDailyUITests" */;
-			buildPhases = (
-				8C8852DC2CA648DD00732BA9 /* Sources */,
-				8C8852DD2CA648DD00732BA9 /* Frameworks */,
-				8C8852DE2CA648DD00732BA9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8C8852E22CA648DD00732BA9 /* PBXTargetDependency */,
-			);
-			name = DoDailyUITests;
-			productName = DoDailyUITests;
-			productReference = 8C8852E02CA648DD00732BA9 /* DoDailyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -230,14 +140,6 @@
 				TargetAttributes = {
 					8C8852BF2CA648DB00732BA9 = {
 						CreatedOnToolsVersion = 15.2;
-					};
-					8C8852D52CA648DD00732BA9 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 8C8852BF2CA648DB00732BA9;
-					};
-					8C8852DF2CA648DD00732BA9 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 8C8852BF2CA648DB00732BA9;
 					};
 				};
 			};
@@ -255,8 +157,6 @@
 			projectRoot = "";
 			targets = (
 				8C8852BF2CA648DB00732BA9 /* DoDaily */,
-				8C8852D52CA648DD00732BA9 /* DoDailyTests */,
-				8C8852DF2CA648DD00732BA9 /* DoDailyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -272,20 +172,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C8852D42CA648DD00732BA9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8C8852DE2CA648DD00732BA9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -294,43 +180,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C8852C82CA648DB00732BA9 /* ToDoDailyViewController.swift in Sources */,
+				8CBDB8CB2D25E9D10048F172 /* Data.swift in Sources */,
 				8C8852FB2CB6197F00732BA9 /* DataModel.xcdatamodeld in Sources */,
+				8C88533F2CC59F3700732BA9 /* CategoryTableViewController.swift in Sources */,
 				8C8852C42CA648DB00732BA9 /* AppDelegate.swift in Sources */,
 				8C8852C62CA648DB00732BA9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C8852D22CA648DD00732BA9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C8852DB2CA648DD00732BA9 /* DoDailyTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8C8852DC2CA648DD00732BA9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C8852E52CA648DD00732BA9 /* DoDailyUITests.swift in Sources */,
-				8C8852E72CA648DD00732BA9 /* DoDailyUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8C8852D82CA648DD00732BA9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C8852BF2CA648DB00732BA9 /* DoDaily */;
-			targetProxy = 8C8852D72CA648DD00732BA9 /* PBXContainerItemProxy */;
-		};
-		8C8852E22CA648DD00732BA9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C8852BF2CA648DB00732BA9 /* DoDaily */;
-			targetProxy = 8C8852E12CA648DD00732BA9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8C8852C92CA648DB00732BA9 /* Main.storyboard */ = {
@@ -389,7 +247,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -452,7 +310,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -527,82 +385,6 @@
 			};
 			name = Release;
 		};
-		8C8852EE2CA648DD00732BA9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NS5Y9M4A6U;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.users.LinkDemo.DoDailyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoDaily.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DoDaily";
-			};
-			name = Debug;
-		};
-		8C8852EF2CA648DD00732BA9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NS5Y9M4A6U;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.users.LinkDemo.DoDailyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoDaily.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DoDaily";
-			};
-			name = Release;
-		};
-		8C8852F12CA648DD00732BA9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NS5Y9M4A6U;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.users.LinkDemo.DoDailyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DoDaily;
-			};
-			name = Debug;
-		};
-		8C8852F22CA648DD00732BA9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NS5Y9M4A6U;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.users.LinkDemo.DoDailyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DoDaily;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -620,24 +402,6 @@
 			buildConfigurations = (
 				8C8852EB2CA648DD00732BA9 /* Debug */,
 				8C8852EC2CA648DD00732BA9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8C8852ED2CA648DD00732BA9 /* Build configuration list for PBXNativeTarget "DoDailyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8C8852EE2CA648DD00732BA9 /* Debug */,
-				8C8852EF2CA648DD00732BA9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8C8852F02CA648DD00732BA9 /* Build configuration list for PBXNativeTarget "DoDailyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8C8852F12CA648DD00732BA9 /* Debug */,
-				8C8852F22CA648DD00732BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
